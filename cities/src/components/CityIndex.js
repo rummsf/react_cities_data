@@ -16,7 +16,7 @@ const sortFactors = [
   }
 ];
 
-class CityIndex extends React {
+class CityIndex extends React.Component {
   state = {
     cities: [],
     sortFactor: null
