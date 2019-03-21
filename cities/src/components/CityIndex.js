@@ -48,11 +48,20 @@ class CityIndex extends React.Component {
         <table border="1">
           <thead>
             <tr>
-              {/* <th onclick="location.href="https://localhost:3000/cities{`sortfactor`}">ID</th> */}
-              <th>ID</th>
-              <th>City</th>
-              <th>Country</th>
-              <th>All Buildings</th>
+              <th>
+                <a href="https://localhost:3000/cities/id">ID</a>
+              </th>
+              <th>
+                <a href="https://localhost:3000/cities/city">City</a>
+              </th>
+              <th>
+                <a href="https://localhost:3000/cities/country">Country</a>
+              </th>
+              <th>
+                <a href="https://localhost:3000/cities/allbuildings">
+                  All Buildings
+                </a>
+              </th>
               <th>100m+</th>
               <th>150m+</th>
               <th>200m+</th>
