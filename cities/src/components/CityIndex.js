@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CitySorts from "./CitySorts";
 import "./Styling.css";
 
@@ -26,40 +27,34 @@ class CityIndex extends React.Component {
           <thead>
             <tr>
               <th>
-                <a href="https://localhost:3000/cities/id">ID</a>
+                <Link to={`/cities/id`}>ID </Link>
               </th>
               <th>
-                <a href="https://localhost:3000/cities/city">City</a>
+                <Link to={`/cities/city`}>City </Link>
               </th>
               <th>
-                <a href="https://localhost:3000/cities/country">Country</a>
+                <Link to={`/cities/country`}>Country </Link>
               </th>
               <th>
-                <a href="https://localhost:3000/cities/allbuildings">
-                  All Buildings
-                </a>
+                <Link to={`/cities/allbuildings`}>All Buildings </Link>
               </th>
               <th>
-                <a href="https://localhost:3000/cities/100m">100m+</a>
+                <Link to={`/cities/100m+`}> 100m+ </Link>
               </th>
               <th>
-                <a href="https://localhost:3000/cities/150m">150m+</a>
+                <Link to={`/cities/150m+`}> 150m+ </Link>
               </th>
               <th>
-                <a href="https://localhost:3000/cities/200m">200m+</a>
+                <Link to={`/cities/200m+`}> 200m+ </Link>
               </th>
               <th>
-                <a href="https://localhost:3000/cities/300m">300m+</a>
+                <Link to={`/cities/300m+`}> 300m+ </Link>
               </th>
               <th>
-                <a href="https://localhost:3000/cities/telecomtowers">
-                  Telecom Towers
-                </a>
+                <Link to={`/cities/telecomtowers`}> Telecom Towers </Link>
               </th>
               <th>
-                <a href="https://localhost:3000/cities/allstructures">
-                  All Structures
-                </a>
+                <Link to={`/cities/allstructures`}> All Structures </Link>
               </th>
             </tr>
           </thead>
