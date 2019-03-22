@@ -7,7 +7,7 @@ class CityIndex extends React.Component {
     cities: this.props.cities
   };
 
-  sortCities = props => {
+  sortCities = ({ cities }) => {
     switch (this.props.location.pathname) {
       case "cities/city":
         return this.cities.sort((a, b) => {
