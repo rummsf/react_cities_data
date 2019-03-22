@@ -10,11 +10,11 @@ class CityIndex extends React.Component {
   sortCities = ({ cities }) => {
     switch (this.props.location.pathname) {
       case "cities/city":
-        return this.cities.sort((a, b) => {
+        return cities.sort((a, b) => {
           return a.city.localeCompare(b.city);
         });
       case "cities/country":
-        return this.cities.sort((a, b) => {
+        return cities.sort((a, b) => {
           return a.country.localeCompare(b.country);
         });
       default:
