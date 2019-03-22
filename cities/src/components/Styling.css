@@ -1,0 +1,36 @@
+.table {
+  border: 1px solid gray;
+  background-color: #b7c2e0;
+  max-width: 100%;
+  text-align: center;
+  padding: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 4px;
+}
+
+tr:nth-child(even) {
+  background-color: #e3e9f5;
+}
+
+th {
+  background-color: rgba(255, 255, 255, 0.287);
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.image {
+  max-width: 80%;
+  max-height: 100vh;
+  opacity: 0.6;
+}
+
+h1 {
+  color: white;
+  font-size: 100px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}

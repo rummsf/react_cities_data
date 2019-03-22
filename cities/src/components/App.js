@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import CityIndex from "./CityIndex";
+import Header from "./Header";
 import history from "../history";
 
 class App extends Component {
@@ -17,11 +18,19 @@ class App extends Component {
   render() {
     return (
       <div className="ui-container">
+        <Header />
+
         <Router history={history}>
           <div>
             <Switch>
               <Route
                 path="/cities"
+                render={props => (
+                  <CityIndex {...props} cities={this.state.cities} />
+                )}
+              />
+              <Route
+                path="cities/city"
                 render={props => (
                   <CityIndex {...props} cities={this.state.cities} />
                 )}

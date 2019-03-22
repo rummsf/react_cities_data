@@ -1,51 +1,32 @@
 import React from "react";
 import CitySorts from "./CitySorts";
-
-const sortFactors = [
-  {
-    text: "City",
-    value: "city"
-  },
-  {
-    text: "Country",
-    value: "country"
-  },
-  {
-    text: "All Buildings",
-    value: "all_buildings"
-  }
-];
+import "./Styling.css";
 
 class CityIndex extends React.Component {
   state = {
-    cities: [],
-    sortFactor: null
+    cities: this.props.cities
   };
 
-  changeSortFactor = (event, { value }) => {
-    this.setState({
-      sortFactor: value
-    });
-  };
-
-  sortCities = cities => {
-    if (this.state.sortFactor === "city") {
-      return cities.sort((a, b) => {
-        return a.city.localeCompare(b.city);
-      });
-    } else if (this.state.sortType === "country") {
-      return cities.sort((a, b) => {
-        return a.country.localeCompare(b.country);
-      });
-    } else {
-      return cities;
+  sortCities = props => {
+    switch (this.props.location.pathname) {
+      case "cities/city":
+        return this.cities.sort((a, b) => {
+          return a.city.localeCompare(b.city);
+        });
+      case "cities/country":
+        return this.cities.sort((a, b) => {
+          return a.country.localeCompare(b.country);
+        });
+      default:
+        return this.state.cities;
     }
   };
 
   render() {
+    const renderedCities = this.sortCities(this.props.location.pathname);
     return (
       <div>
-        <table border="1">
+        <table border="1" className="table">
           <thead>
             <tr>
               <th>
@@ -62,33 +43,51 @@ class CityIndex extends React.Component {
                   All Buildings
                 </a>
               </th>
-              <th>100m+</th>
-              <th>150m+</th>
-              <th>200m+</th>
-              <th>300m+</th>
-              <th>Telecom Towers</th>
-              <th>All Structures</th>
+              <th>
+                <a href="https://localhost:3000/cities/100m">100m+</a>
+              </th>
+              <th>
+                <a href="https://localhost:3000/cities/150m">150m+</a>
+              </th>
+              <th>
+                <a href="https://localhost:3000/cities/200m">200m+</a>
+              </th>
+              <th>
+                <a href="https://localhost:3000/cities/300m">300m+</a>
+              </th>
+              <th>
+                <a href="https://localhost:3000/cities/telecomtowers">
+                  Telecom Towers
+                </a>
+              </th>
+              <th>
+                <a href="https://localhost:3000/cities/allstructures">
+                  All Structures
+                </a>
+              </th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              {this.props.cities.map(city => {
-                return (
-                  <tr>
-                    <td>{city.client_city_id} </td>
-                    <td> {city.city} </td>
-                    <td>{city.country}</td>
-                    <td>{city.all_buildings}</td>
-                    <td>{city.one_hundred}</td>
-                    <td>{city.one_hundred_fifty}</td>
-                    <td>{city.two_hundred}</td>
-                    <td>{city.three_hundred}</td>
-                    <td>{city.telecom_towers}</td>
-                    <td>{city.all_structures}</td>
-                  </tr>
-                );
-              })}
-            </tr>
+            {renderedCities.map(city => {
+              return (
+                <tr>
+                  <td>{city.client_city_id} </td>
+                  <td>
+                    <h5>{city.city}</h5>
+                  </td>
+                  <td>
+                    <h5>{city.country}</h5>
+                  </td>
+                  <td>{city.all_buildings}</td>
+                  <td>{city.one_hundred}</td>
+                  <td>{city.one_hundred_fifty}</td>
+                  <td>{city.two_hundred}</td>
+                  <td>{city.three_hundred}</td>
+                  <td>{city.telecom_towers}</td>
+                  <td>{city.all_structures}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
         <CitySorts cities={this.props.cities} />
