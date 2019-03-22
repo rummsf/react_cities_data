@@ -4,23 +4,31 @@ import CitySorts from "./CitySorts";
 import "./Styling.css";
 
 class CityIndex extends React.Component {
-  sortCities = () => {
+  state = {
+    cities: this.props.cities,
+    sortedCities: []
+  };
+
+  sortCities() {
+    let sortedCities = [...this.state.cities];
     switch (this.props.location.pathname) {
       case "cities/city":
-        return this.props.cities.sort((a, b) => {
+        return sortedCities.sort((a, b) => {
           return a.city.localeCompare(b.city);
         });
       case "cities/country":
-        return this.props.cities.sort((a, b) => {
+        return sortedCities.sort((a, b) => {
           return a.country.localeCompare(b.country);
         });
       default:
-        return this.props.cities;
-    }
-  };
+        return sortedCities;
+    }}
+    this.setState({
+      sortedCities: sortedCities
+    });
+  
 
   render() {
-    const renderedCities = this.sortCities();
     return (
       <div>
         <table border="1" className="table">
@@ -59,9 +67,9 @@ class CityIndex extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {renderedCities.map(city => {
+            {this.sortCities().map(city => {
               return (
-                <tr>
+                <tr key={city.city}>
                   <td>{city.client_city_id} </td>
                   <td>
                     <h5>{city.city}</h5>
