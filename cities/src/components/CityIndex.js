@@ -3,27 +3,23 @@ import CitySorts from "./CitySorts";
 import "./Styling.css";
 
 class CityIndex extends React.Component {
-  state = {
-    cities: this.props.cities
-  };
-
-  sortCities = ({ cities }) => {
+  sortCities = () => {
     switch (this.props.location.pathname) {
       case "cities/city":
-        return cities.sort((a, b) => {
+        return this.props.cities.sort((a, b) => {
           return a.city.localeCompare(b.city);
         });
       case "cities/country":
-        return cities.sort((a, b) => {
+        return this.props.cities.sort((a, b) => {
           return a.country.localeCompare(b.country);
         });
       default:
-        return this.state.cities;
+        return this.props.cities;
     }
   };
 
   render() {
-    const renderedCities = this.sortCities(this.props.location.pathname);
+    const renderedCities = this.sortCities();
     return (
       <div>
         <table border="1" className="table">

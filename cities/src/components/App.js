@@ -26,13 +26,21 @@ class App extends Component {
               <Route
                 path="/cities"
                 render={props => (
-                  <CityIndex {...props} cities={this.state.cities} />
+                  <CityIndex
+                    {...props}
+                    cities={this.state.cities}
+                    // url={this.props.location.path}
+                  />
                 )}
               />
               <Route
                 path="cities/city"
                 render={props => (
-                  <CityIndex {...props} cities={this.state.cities} />
+                  <CityIndex
+                    {...props}
+                    cities={this.state.cities}
+                    // url={this.props.location.path}
+                  />
                 )}
               />
 
