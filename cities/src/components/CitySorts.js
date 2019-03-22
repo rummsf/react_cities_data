@@ -1,7 +1,10 @@
+// possible use for separation of concerns
 import React from "react";
 
-const CitySorts = () => {
-  return <div />;
-};
+class CitySorts extends React.Component {
+  render() {
+    return <div> </div>;
+  }
+}
 
 export default CitySorts;

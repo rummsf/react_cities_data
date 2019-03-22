@@ -1,34 +1,73 @@
 import React from "react";
+// import CitySorts from "./CitySorts";
 import { Link } from "react-router-dom";
-import CitySorts from "./CitySorts";
 import "./Styling.css";
 
 class CityIndex extends React.Component {
-  state = {
-    cities: this.props.cities,
-    sortedCities: []
-  };
-
-  sortCities() {
-    let sortedCities = [...this.state.cities];
-    switch (this.props.location.pathname) {
-      case "cities/city":
-        return sortedCities.sort((a, b) => {
+  sortCities = () => {
+    let sortedCities = [...this.props.cities];
+    switch (this.props.match.params.sort) {
+      case "cities":
+        return sortedCities;
+      case "city":
+        sortedCities = sortedCities.sort((a, b) => {
           return a.city.localeCompare(b.city);
         });
-      case "cities/country":
-        return sortedCities.sort((a, b) => {
+        break;
+      case "country":
+        sortedCities = sortedCities.sort((a, b) => {
           return a.country.localeCompare(b.country);
         });
+        break;
+      case "id":
+        sortedCities = sortedCities.sort((a, b) => {
+          return a.client_city_id - b.client_city_id;
+        });
+        break;
+      case "allbuildings":
+        sortedCities = sortedCities.sort((a, b) => {
+          return a.all_buildings - b.all_buildings;
+        });
+        break;
+      case "100m+":
+        sortedCities = sortedCities.sort((a, b) => {
+          return a.one_hundred - b.one_hundred;
+        });
+        break;
+      case "150m+":
+        sortedCities = sortedCities.sort((a, b) => {
+          return a.one_hundred_fifty - b.one_hundred_fifty;
+        });
+        break;
+      case "200m+":
+        sortedCities = sortedCities.sort((a, b) => {
+          return a.two_hundred - b.two_hundred;
+        });
+        break;
+      case "300m+":
+        sortedCities = sortedCities.sort((a, b) => {
+          return a.three_hundred - b.three_hundred;
+        });
+        break;
+      case "telecomtowers":
+        sortedCities = sortedCities.sort((a, b) => {
+          return a.telecom_towers - b.telecom_towers;
+        });
+        break;
+      case "allstructures":
+        sortedCities = sortedCities.sort((a, b) => {
+          return a.all_structures - b.all_structures;
+        });
+        break;
+
       default:
         return sortedCities;
-    }}
-    this.setState({
-      sortedCities: sortedCities
-    });
-  
+    }
+    return sortedCities;
+  };
 
   render() {
+    const sortedCities = this.sortCities();
     return (
       <div>
         <table border="1" className="table">
@@ -67,7 +106,7 @@ class CityIndex extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {this.sortCities().map(city => {
+            {sortedCities.map(city => {
               return (
                 <tr key={city.city}>
                   <td>{city.client_city_id} </td>
@@ -89,7 +128,8 @@ class CityIndex extends React.Component {
             })}
           </tbody>
         </table>
-        <CitySorts cities={this.props.cities} />
+        {/* For potential future separation of concerns:  */}
+        {/* <CitySorts cities={this.props.cities} /> */}
       </div>
     );
   }

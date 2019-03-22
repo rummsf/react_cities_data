@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div>
       <h1>
-        <a href="http://localhost:3000/cities">CITYSCOPE</a>
+        <a href="http://localhost:3000/cities/cities">CITYSCOPE</a>
       </h1>
     </div>
   );
