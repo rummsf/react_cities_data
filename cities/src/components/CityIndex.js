@@ -86,7 +86,7 @@ class CityIndex extends React.Component {
                 <tr key={city.city}>
                   <td>{city.client_city_id} </td>
                   <td>
-                    <Link to={`/cities/${city.city}`}>
+                    <Link to={`/cities/show/${city.city}`}>
                       <h5>{city.city}</h5>
                     </Link>
                   </td>

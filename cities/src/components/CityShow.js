@@ -1,9 +1,14 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React from "react";
 
 const CityShow = props => {
-  return <div>{props.match.params.country}</div>;
+  return (
+    <div>
+      <h1>{props.match.params.city}</h1>
+    </div>
+  );
 };
+
+export default CityShow;
 
 // {/* <td>{props.city.one_hundred_fifty}</td>
 //         <td>{props.two_hundred}</td>
@@ -40,5 +45,3 @@ const CityShow = props => {
 //   return a.all_structures - b.all_structures;
 // });
 // break;
-
-export default CityShow;

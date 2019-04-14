@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import CityIndex from "./CityIndex";
 import Header from "./Header";
 import SearchBar from "./SearchBar";
@@ -30,26 +30,28 @@ class App extends Component {
   render() {
     return (
       <div className="ui-container">
-        <Header />
-
-        <SearchBar
-          changeSearchQuery={this.changeSearchQuery}
-          searchQuery={this.searchQuery}
-        />
-
         <BrowserRouter history={history}>
+          <Header />
+
+          <SearchBar
+            changeSearchQuery={this.changeSearchQuery}
+            searchQuery={this.searchQuery}
+          />
+
           <div>
-            <Route
-              path="/cities/:sort"
-              render={props => (
-                <CityIndex
-                  {...props}
-                  cities={this.state.cities}
-                  searchQuery={this.state.searchQuery}
-                />
-              )}
-            />
-            <Route path="/cities/:city" exact component={CityShow} />
+            <Switch>
+              <Route path="/cities/show/:city" component={CityShow} />
+              <Route
+                path="/cities/:sort"
+                render={props => (
+                  <CityIndex
+                    {...props}
+                    cities={this.state.cities}
+                    searchQuery={this.state.searchQuery}
+                  />
+                )}
+              />
+            </Switch>
           </div>
         </BrowserRouter>
       </div>
