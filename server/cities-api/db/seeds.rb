@@ -3,447 +3,447 @@ City.destroy_all
 cities = [
   {
     client_city_id: 2,
-    city: "New York city",
+    city: "New York City",
     country: "United States",
-    all_buildings: "1,390",
+    all_buildings: 1390,
     one_hundred: 803,
     one_hundred_fifty: 257,
     two_hundred: 66,
     three_hundred: 7,
     telecom_towers: 2,
-    all_structures: "1,398"
+    all_structures: 1398
   },
   {
     client_city_id: 1,
     city: "Hong Kong",
     country: "China",
-    all_buildings: "820",
+    all_buildings: 820,
     one_hundred: 555,
     one_hundred_fifty: 317,
     two_hundred: 64,
     three_hundred: 6,
     telecom_towers: 0,
-    all_structures: "820"
+    all_structures: 820
   },
   {
     client_city_id: 6,
     city: "Chicago",
     country: "United States",
-    all_buildings: "524",
+    all_buildings: 524,
     one_hundred: 317,
     one_hundred_fifty: 119,
     two_hundred: 29,
     three_hundred: 6,
     telecom_towers: 1,
-    all_structures: "526"
+    all_structures: 526
   },
   {
     client_city_id: 4,
     city: "Tokyo",
     country: "Japan",
-    all_buildings: "348",
+    all_buildings: 348,
     one_hundred: 284,
     one_hundred_fifty: 145,
     two_hundred: 26,
     three_hundred: 0,
     telecom_towers: 2,
-    all_structures: "351"
+    all_structures: 351
   },
   {
     client_city_id: 3,
     city: "Dubai",
     country: "United Arab Emirates",
-    all_buildings: "370",
+    all_buildings: 370,
     one_hundred: 266,
     one_hundred_fifty: 176,
     two_hundred: 68,
     three_hundred: 20,
     telecom_towers: 0,
-    all_structures: "370"
+    all_structures: 370
   },
   {
     client_city_id: 17,
     city: "Toronto",
     country: "Canada",
-    all_buildings: "487",
+    all_buildings: 487,
     one_hundred: 241,
     one_hundred_fifty: 54,
     two_hundred: 18,
     three_hundred: 0,
     telecom_towers: 1,
-    all_structures: "489"
+    all_structures: 489
   },
   {
     client_city_id: 5,
     city: "Shanghai",
     country: "China",
-    all_buildings: "379",
+    all_buildings: 379,
     one_hundred: 183,
     one_hundred_fifty: 141,
     two_hundred: 52,
     three_hundred: 5,
     telecom_towers: 2,
-    all_structures: "381"
+    all_structures: 381
   },
   {
     client_city_id: 29,
     city: "Moscow",
     country: "Russia",
-    all_buildings: "204",
+    all_buildings: 204,
     one_hundred: 165,
     one_hundred_fifty: 37,
     two_hundred: 15,
     three_hundred: 5,
     telecom_towers: 3,
-    all_structures: "207"
+    all_structures: 207
   },
   {
     client_city_id: 11,
     city: "Seoul",
     country: "South Korea",
-    all_buildings: "158",
+    all_buildings: 158,
     one_hundred: 138,
     one_hundred_fifty: 82,
     two_hundred: 18,
     three_hundred: 1,
     telecom_towers: 1,
-    all_structures: "159"
+    all_structures: 159
   },
   {
     client_city_id: 8,
     city: "Chongqing",
     country: "China",
-    all_buildings: "146",
+    all_buildings: 146,
     one_hundred: 136,
     one_hundred_fifty: 110,
     two_hundred: 35,
     three_hundred: 2,
     telecom_towers: 0,
-    all_structures: "146"
+    all_structures: 146
   },
   {
     client_city_id: 10,
     city: "Singapore",
     country: "Singapore",
-    all_buildings: "203",
+    all_buildings: 203,
     one_hundred: 129,
     one_hundred_fifty: 84,
     two_hundred: 32,
     three_hundred: 0,
     telecom_towers: 1,
-    all_structures: "204"
+    all_structures: 204
   },
   {
     client_city_id: 13,
     city: "Jakarta",
     country: "Indonesia",
-    all_buildings: "382",
+    all_buildings: 382,
     one_hundred: 128,
     one_hundred_fifty: 74,
     two_hundred: 33,
     three_hundred: 0,
     telecom_towers: 2,
-    all_structures: "383"
+    all_structures: 383
   },
   {
     client_city_id: 7,
     city: "Shenzhen",
     country: "China",
-    all_buildings: "145",
+    all_buildings: 145,
     one_hundred: 125,
     one_hundred_fifty: 114,
     two_hundred: 58,
     three_hundred: 8,
     telecom_towers: 0,
-    all_structures: "145"
+    all_structures: 145
   },
   {
     client_city_id: 9,
     city: "Guangzhou",
     country: "China",
-    all_buildings: "161",
+    all_buildings: 161,
     one_hundred: 125,
     one_hundred_fifty: 103,
     two_hundred: 30,
     three_hundred: 9,
     telecom_towers: 1,
-    all_structures: "163"
+    all_structures: 163
   },
   {
     client_city_id: 33,
     city: "Sydney",
     country: "Australia",
-    all_buildings: "426",
+    all_buildings: 426,
     one_hundred: 123,
     one_hundred_fifty: 35,
     two_hundred: 9,
     three_hundred: 0,
     telecom_towers: 1,
-    all_structures: "429"
+    all_structures: 429
   },
   {
     client_city_id: 26,
     city: "Melbourne",
     country: "Australia",
-    all_buildings: "207",
+    all_buildings: 207,
     one_hundred: 115,
     one_hundred_fifty: 40,
     two_hundred: 13,
     three_hundred: 0,
     telecom_towers: 4,
-    all_structures: "211"
+    all_structures: 211
   },
   {
     client_city_id: 23,
     city: "Miami",
     country: "United States",
-    all_buildings: "124",
+    all_buildings: 124,
     one_hundred: 98,
     one_hundred_fifty: 41,
     two_hundred: 3,
     three_hundred: 0,
     telecom_towers: 0,
-    all_structures: "125"
+    all_structures: 125
   },
   {
     client_city_id: 29,
     city: "Houston",
     country: "United States",
-    all_buildings: "195",
+    all_buildings: 195,
     one_hundred: 91,
     one_hundred_fifty: 37,
     two_hundred: 15,
     three_hundred: 2,
     telecom_towers: 1,
-    all_structures: "196"
+    all_structures: 196
   },
   {
     client_city_id: 12,
     city: "Chengdu",
     country: "China",
-    all_buildings: "96",
+    all_buildings: 96,
     one_hundred: 90,
     one_hundred_fifty: 77,
     two_hundred: 16,
     three_hundred: 0,
     telecom_towers: 1,
-    all_structures: "97"
+    all_structures: 97
   },
   {
     client_city_id: 28,
     city: "Istanbul",
     country: "Turkey",
-    all_buildings: "102",
+    all_buildings: 102,
     one_hundred: 88,
     one_hundred_fifty: 38,
     two_hundred: 2,
     three_hundred: 0,
     telecom_towers: 1,
-    all_structures: "103"
+    all_structures: 103
   },
   {
     client_city_id: 44,
     city: "San Francisco",
     country: "United States",
-    all_buildings: "111",
+    all_buildings: 111,
     one_hundred: 87,
     one_hundred_fifty: 21,
     two_hundred: 3,
     three_hundred: 0,
     telecom_towers: 3,
-    all_structures: "114"
+    all_structures: 114
   },
   {
     client_city_id: 15,
     city: "Bangkok",
     country: "Thailand",
-    all_buildings: "115",
+    all_buildings: 115,
     one_hundred: 82,
     one_hundred_fifty: 62,
     two_hundred: 12,
     three_hundred: 2,
     telecom_towers: 1,
-    all_structures: "116"
+    all_structures: 116
   },
   {
     client_city_id: 14,
     city: "Shenyang",
     country: "China",
-    all_buildings: "80",
+    all_buildings: 80,
     one_hundred: 79,
     one_hundred_fifty: 72,
     two_hundred: 10,
     three_hundred: 2,
     telecom_towers: 1,
-    all_structures: "81"
+    all_structures: 81
   },
   {
     client_city_id: 23,
     city: "Mumbai",
     country: "India",
-    all_buildings: "124",
+    all_buildings: 124,
     one_hundred: 76,
     one_hundred_fifty: 41,
     two_hundred: 10,
     three_hundred: 1,
     telecom_towers: 1,
-    all_structures: "125"
+    all_structures: 125
   },
   {
     client_city_id: 68,
     city: "São Paolo",
     country: "Brazil",
-    all_buildings: "176",
+    all_buildings: 176,
     one_hundred: 76,
     one_hundred_fifty: 13,
     two_hundred: 0,
     three_hundred: 0,
     telecom_towers: 0,
-    all_structures: "176"
+    all_structures: 176
   },
   {
     client_city_id: 17,
     city: "Busan",
     country: "South Korea",
-    all_buildings: "84",
+    all_buildings: 84,
     one_hundred: 73,
     one_hundred_fifty: 54,
     two_hundred: 15,
     three_hundred: 1,
     telecom_towers: 0,
-    all_structures: "84"
+    all_structures: 84
   },
   {
     client_city_id: 19,
     city: "Kuala Lumpur",
     country: "Malaysia",
-    all_buildings: "104",
+    all_buildings: 104,
     one_hundred: 70,
     one_hundred_fifty: 53,
     two_hundred: 21,
     three_hundred: 3,
     telecom_towers: 1,
-    all_structures: "107"
+    all_structures: 107
   },
   {
     client_city_id: 23,
     city: "Osaka",
     country: "Japan",
-    all_buildings: "76",
+    all_buildings: 76,
     one_hundred: 70,
     one_hundred_fifty: 41,
     two_hundred: 5,
     three_hundred: 1,
     telecom_towers: 1,
-    all_structures: "78"
+    all_structures: 78
   },
   {
     client_city_id: 80,
     city: "Buenos Aires",
     country: "Argentina",
-    all_buildings: "80",
+    all_buildings: 80,
     one_hundred: 69,
     one_hundred_fifty: 10,
     two_hundred: 0,
     three_hundred: 0,
     telecom_towers: 0,
-    all_structures: "80"
+    all_structures: 80
   },
   {
     client_city_id: 16,
     city: "Nanjing",
     country: "China",
-    all_buildings: "69",
+    all_buildings: 69,
     one_hundred: 67,
     one_hundred_fifty: 55,
     two_hundred: 25,
     three_hundred: 3,
     telecom_towers: 1,
-    all_structures: "70"
+    all_structures: 70
   },
   {
     client_city_id: 41,
     city: "Los Angeles",
     country: "United States",
-    all_buildings: "95",
+    all_buildings: 95,
     one_hundred: 67,
     one_hundred_fifty: 24,
     two_hundred: 12,
     three_hundred: 2,
     telecom_towers: 0,
-    all_structures: "95"
+    all_structures: 95
   },
   {
     client_city_id: 58,
     city: "Atlanta",
     country: "United States",
-    all_buildings: "90",
+    all_buildings: 90,
     one_hundred: 67,
     one_hundred_fifty: 16,
     two_hundred: 10,
     three_hundred: 1,
     telecom_towers: 2,
-    all_structures: "92"
+    all_structures: 92
   },
   {
     client_city_id: 20,
     city: "Panama city",
     country: "Panama",
-    all_buildings: "79",
+    all_buildings: 79,
     one_hundred: 66,
     one_hundred_fifty: 51,
     two_hundred: 22,
     three_hundred: 0,
     telecom_towers: 0,
-    all_structures: "79"
+    all_structures: 79
   },
   {
     client_city_id: 49,
     city: "Mexico city",
     country: "Mexico",
-    all_buildings: "99",
+    all_buildings: 99,
     one_hundred: 66,
     one_hundred_fifty: 19,
     two_hundred: 4,
     three_hundred: 0,
     telecom_towers: 1,
-    all_structures: "100"
+    all_structures: 100
   },
   {
     client_city_id: 54,
     city: "Calgary",
     country: "Canada",
-    all_buildings: "90",
+    all_buildings: 90,
     one_hundred: 63,
     one_hundred_fifty: 17,
     two_hundred: 4,
     three_hundred: 1,
     telecom_towers: 1,
-    all_structures: "91"
+    all_structures: 91
   },
   {
     client_city_id: 68,
     city: "Brisbane",
     country: "Australia",
-    all_buildings: "97",
+    all_buildings: 97,
     one_hundred: 60,
     one_hundred_fifty: 13,
     two_hundred: 5,
     three_hundred: 0,
     telecom_towers: 0,
-    all_structures: "97"
+    all_structures: 97
   },
   {
     client_city_id: 54,
     city: "London",
     country: "United Kingdom",
-    all_buildings: "263",
+    all_buildings: 263,
     one_hundred: 59,
     one_hundred_fifty: 17,
     two_hundred: 5,
     three_hundred: 1,
     telecom_towers: 5,
-    all_structures: "272"
+    all_structures: 272
   }
 ];
 

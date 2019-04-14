@@ -1,11 +1,16 @@
 import React from "react";
-// import CitySorts from "./CitySorts";
 import { Link } from "react-router-dom";
 import "./Styling.css";
 
 class CityIndex extends React.Component {
   sortCities = () => {
-    let sortedCities = [...this.props.cities];
+    let sortedCities = [
+      ...this.props.cities.filter(
+        city =>
+          city.city.toLowerCase().includes(this.props.searchQuery) ||
+          city.country.toLowerCase().includes(this.props.searchQuery)
+      )
+    ];
     switch (this.props.match.params.sort) {
       case "cities":
         return sortedCities;
@@ -27,36 +32,6 @@ class CityIndex extends React.Component {
       case "allbuildings":
         sortedCities = sortedCities.sort((a, b) => {
           return a.all_buildings - b.all_buildings;
-        });
-        break;
-      case "100m+":
-        sortedCities = sortedCities.sort((a, b) => {
-          return a.one_hundred - b.one_hundred;
-        });
-        break;
-      case "150m+":
-        sortedCities = sortedCities.sort((a, b) => {
-          return a.one_hundred_fifty - b.one_hundred_fifty;
-        });
-        break;
-      case "200m+":
-        sortedCities = sortedCities.sort((a, b) => {
-          return a.two_hundred - b.two_hundred;
-        });
-        break;
-      case "300m+":
-        sortedCities = sortedCities.sort((a, b) => {
-          return a.three_hundred - b.three_hundred;
-        });
-        break;
-      case "telecomtowers":
-        sortedCities = sortedCities.sort((a, b) => {
-          return a.telecom_towers - b.telecom_towers;
-        });
-        break;
-      case "allstructures":
-        sortedCities = sortedCities.sort((a, b) => {
-          return a.all_structures - b.all_structures;
         });
         break;
 
@@ -111,7 +86,9 @@ class CityIndex extends React.Component {
                 <tr key={city.city}>
                   <td>{city.client_city_id} </td>
                   <td>
-                    <h5>{city.city}</h5>
+                    <Link to={`/cities/${city.city}`}>
+                      <h5>{city.city}</h5>
+                    </Link>
                   </td>
                   <td>
                     <h5>{city.country}</h5>
@@ -128,8 +105,6 @@ class CityIndex extends React.Component {
             })}
           </tbody>
         </table>
-        {/* For potential future separation of concerns:  */}
-        {/* <CitySorts cities={this.props.cities} /> */}
       </div>
     );
   }
