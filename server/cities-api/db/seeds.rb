@@ -3,16 +3,14 @@ City.destroy_all
 cities = [
   {
     client_city_id: 2,
-    city: "New York City": {
- one_hundred: 803,
+    city: "New York City",
+    country: "United States",
+    all_buildings: 1390,
+    one_hundred: 803,
     one_hundred_fifty: 257,
     two_hundred: 66,
     three_hundred: 7,
     telecom_towers: 2,
-    },
-    country: "United States",
-    all_buildings: 1390,
-   
     all_structures: 1398
   },
   {

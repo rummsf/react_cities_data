@@ -1,47 +1,37 @@
 import React from "react";
 
 const CityShow = props => {
+  const chosenCity = props.cities.find(
+    city => city.city === props.match.params.city
+  );
   return (
     <div>
-      <h1>{props.match.params.city}</h1>
+      <h1>{props.match.params.city},</h1>
+      <h2>{chosenCity && chosenCity.country}</h2>
+      <table border="1" className="table">
+        <thead>
+          <tr>
+            <th> Total Buildings </th>
+            <th> 100m+</th>
+            <th> 150m+</th>
+            <th> 200m+</th>
+            <th> 300m+</th>
+            <th> Telecom Towers </th>
+            <th> Total Structures</th>
+          </tr>
+          <tr>
+            <td>{chosenCity && chosenCity.all_buildings}</td>
+            <td>{chosenCity && chosenCity.one_hundred}</td>
+            <td>{chosenCity && chosenCity.one_hundred_fifty}</td>
+            <td>{chosenCity && chosenCity.two_hundred}</td>
+            <td>{chosenCity && chosenCity.three_hundred}</td>
+            <td>{chosenCity && chosenCity.telecom_towers}</td>
+            <td>{chosenCity && chosenCity.all_structures}</td>
+          </tr>
+        </thead>
+      </table>
     </div>
   );
 };
 
 export default CityShow;
-
-// {/* <td>{props.city.one_hundred_fifty}</td>
-//         <td>{props.two_hundred}</td>
-//         <td>{props.city.three_hundred}</td>
-//         <td>{props.city.telecom_towers}</td> */}
-
-//   case "100m+":
-// sortedCities = sortedCities.sort((a, b) => {
-//   return a.one_hundred - b.one_hundred;
-// });
-// break;
-//       case "150m+":
-// sortedCities = sortedCities.sort((a, b) => {
-//   return a.one_hundred_fifty - b.one_hundred_fifty;
-// });
-// break;
-//       case "200m+":
-// sortedCities = sortedCities.sort((a, b) => {
-//   return a.two_hundred - b.two_hundred;
-// });
-// break;
-//       case "300m+":
-// sortedCities = sortedCities.sort((a, b) => {
-//   return a.three_hundred - b.three_hundred;
-// });
-// break;
-//       case "telecomtowers":
-// sortedCities = sortedCities.sort((a, b) => {
-//   return a.telecom_towers - b.telecom_towers;
-// });
-// break;
-//       case "allstructures":
-// sortedCities = sortedCities.sort((a, b) => {
-//   return a.all_structures - b.all_structures;
-// });
-// break;
