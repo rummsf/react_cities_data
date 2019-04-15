@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Router, Switch, Route } from "react-router-dom";
 import CityIndex from "./CityIndex";
 import Header from "./Header";
-import SearchBar from "./SearchBar";
+// import SearchBar from "./SearchBar";
 import CityShow from "./CityShow";
 import history from "../history";
 
@@ -33,10 +33,10 @@ class App extends Component {
         <Router history={history}>
           <Header />
 
-          <SearchBar
+          {/* <SearchBar
             changeSearchQuery={this.changeSearchQuery}
             searchQuery={this.searchQuery}
-          />
+          /> */}
 
           <div>
             <Switch>
@@ -54,6 +54,7 @@ class App extends Component {
                     {...props}
                     cities={this.state.cities}
                     searchQuery={this.state.searchQuery}
+                    changeSearchQuery={this.changeSearchQuery}
                   />
                 )}
               />

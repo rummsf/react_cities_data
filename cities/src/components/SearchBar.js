@@ -1,9 +1,9 @@
-import React from "react";
+// import React from "react";
 
-const SearchBar = props => {
-  return (
-    <input onChange={event => props.changeSearchQuery(event.target.value)} />
-  );
-};
+// const SearchBar = props => {
+//   return (
+//     <input onChange={event => props.changeSearchQuery(event.target.value)} />
+//   );
+// };
 
-export default SearchBar;
+// export default SearchBar;

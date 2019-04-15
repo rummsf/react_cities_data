@@ -29,7 +29,12 @@ class CityIndex extends React.Component {
           return a.client_city_id - b.client_city_id;
         });
         break;
-      case "allbuildings":
+      case "totalbuildings":
+        sortedCities = sortedCities.sort((a, b) => {
+          return a.all_buildings - b.all_buildings;
+        });
+        break;
+      case "totalstructures":
         sortedCities = sortedCities.sort((a, b) => {
           return a.all_buildings - b.all_buildings;
         });
@@ -45,6 +50,13 @@ class CityIndex extends React.Component {
     const sortedCities = this.sortCities();
     return (
       <div>
+        <div>
+          <h3>Search by City or Country </h3>
+          <input
+            onChange={event => this.props.changeSearchQuery(event.target.value)}
+          />
+        </div>
+        <br />
         <table border="1" className="table">
           <thead>
             <tr>
@@ -58,25 +70,11 @@ class CityIndex extends React.Component {
                 <Link to={`/cities/country`}>Country </Link>
               </th>
               <th>
-                <Link to={`/cities/allbuildings`}>All Buildings </Link>
+                <Link to={`/cities/totalbuildings`}>Total Buildings </Link>
               </th>
+
               <th>
-                <Link to={`/cities/100m+`}> 100m+ </Link>
-              </th>
-              <th>
-                <Link to={`/cities/150m+`}> 150m+ </Link>
-              </th>
-              <th>
-                <Link to={`/cities/200m+`}> 200m+ </Link>
-              </th>
-              <th>
-                <Link to={`/cities/300m+`}> 300m+ </Link>
-              </th>
-              <th>
-                <Link to={`/cities/telecomtowers`}> Telecom Towers </Link>
-              </th>
-              <th>
-                <Link to={`/cities/allstructures`}> All Structures </Link>
+                <Link to={`/cities/totalstructures`}> Total Structures </Link>
               </th>
             </tr>
           </thead>
@@ -86,19 +84,10 @@ class CityIndex extends React.Component {
                 <tr key={city.city}>
                   <td>{city.client_city_id} </td>
                   <td>
-                    <Link to={`/cities/show/${city.city}`}>
-                      <h5>{city.city}</h5>
-                    </Link>
+                    <Link to={`/cities/show/${city.city}`}>{city.city}</Link>
                   </td>
-                  <td>
-                    <h5>{city.country}</h5>
-                  </td>
+                  <td>{city.country}</td>
                   <td>{city.all_buildings}</td>
-                  <td>{city.one_hundred}</td>
-                  <td>{city.one_hundred_fifty}</td>
-                  <td>{city.two_hundred}</td>
-                  <td>{city.three_hundred}</td>
-                  <td>{city.telecom_towers}</td>
                   <td>{city.all_structures}</td>
                 </tr>
               );

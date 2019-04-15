@@ -1,4 +1,5 @@
 import React from "react";
+import "./Styling.css";
 
 const CityShow = props => {
   const chosenCity = props.cities.find(
@@ -6,8 +7,10 @@ const CityShow = props => {
   );
   return (
     <div>
-      <h1>{props.match.params.city},</h1>
-      <h2>{chosenCity && chosenCity.country}</h2>
+      <h2>
+        {props.match.params.city}, <br />
+        {chosenCity && chosenCity.country}
+      </h2>
       <table border="1" className="table">
         <thead>
           <tr>
@@ -19,16 +22,16 @@ const CityShow = props => {
             <th> Telecom Towers </th>
             <th> Total Structures</th>
           </tr>
-          <tr>
-            <td>{chosenCity && chosenCity.all_buildings}</td>
-            <td>{chosenCity && chosenCity.one_hundred}</td>
-            <td>{chosenCity && chosenCity.one_hundred_fifty}</td>
-            <td>{chosenCity && chosenCity.two_hundred}</td>
-            <td>{chosenCity && chosenCity.three_hundred}</td>
-            <td>{chosenCity && chosenCity.telecom_towers}</td>
-            <td>{chosenCity && chosenCity.all_structures}</td>
-          </tr>
         </thead>
+        <tr>
+          <td>{chosenCity && chosenCity.all_buildings}</td>
+          <td>{chosenCity && chosenCity.one_hundred}</td>
+          <td>{chosenCity && chosenCity.one_hundred_fifty}</td>
+          <td>{chosenCity && chosenCity.two_hundred}</td>
+          <td>{chosenCity && chosenCity.three_hundred}</td>
+          <td>{chosenCity && chosenCity.telecom_towers}</td>
+          <td>{chosenCity && chosenCity.all_structures}</td>
+        </tr>
       </table>
     </div>
   );
