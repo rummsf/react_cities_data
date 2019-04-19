@@ -1,3 +1,3 @@
 REACT APP: Cities' Data
 
-Sort and filter a table of data, with routing
+Using react-router to sort the index page by column headings with corresponding URLs, and pass URL params to view show pages of cities' data.

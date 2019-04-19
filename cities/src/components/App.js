@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import CityIndex from "./CityIndex";
 import Header from "./Header";
-// import SearchBar from "./SearchBar";
 import CityShow from "./CityShow";
 import history from "../history";
+import CountryChart from "./CountryChart";
 
 class App extends Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class App extends Component {
   render() {
     return (
       <div className="ui-container">
-        <Router history={history}>
+        <BrowserRouter history={history}>
           <Header />
 
           {/* <SearchBar
@@ -41,10 +41,17 @@ class App extends Component {
           <div>
             <Switch>
               <Route
+                exact
                 path="/cities/show/:city"
-                // component={CityShow}
                 render={props => (
                   <CityShow {...props} cities={this.state.cities} />
+                )}
+              />
+              <Route
+                exact
+                path="/cities/show/chart/:country"
+                render={props => (
+                  <CountryChart {...props} cities={this.state.cities} />
                 )}
               />
               <Route
@@ -60,7 +67,7 @@ class App extends Component {
               />
             </Switch>
           </div>
-        </Router>
+        </BrowserRouter>
       </div>
     );
   }

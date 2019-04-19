@@ -86,7 +86,11 @@ class CityIndex extends React.Component {
                   <td>
                     <Link to={`/cities/show/${city.city}`}>{city.city}</Link>
                   </td>
-                  <td>{city.country}</td>
+                  <td>
+                    <Link to={`/cities/show/chart/${city.country}`}>
+                      {city.country}
+                    </Link>
+                  </td>
                   <td>{city.all_buildings}</td>
                   <td>{city.all_structures}</td>
                 </tr>
