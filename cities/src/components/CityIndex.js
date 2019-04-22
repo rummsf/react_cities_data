@@ -11,6 +11,7 @@ class CityIndex extends React.Component {
           city.country.toLowerCase().includes(this.props.searchQuery)
       )
     ];
+
     switch (this.props.match.params.sort) {
       case "cities":
         return sortedCities;
@@ -51,53 +52,64 @@ class CityIndex extends React.Component {
     return (
       <div>
         <div>
-          <h3>Search by City or Country </h3>
-          <input
-            onChange={event => this.props.changeSearchQuery(event.target.value)}
-          />
+          <div class="ui search">
+            <div class="ui large icon input">
+              <input
+                class="prompt"
+                type="text"
+                placeholder="Search city or country"
+                onChange={event =>
+                  this.props.changeSearchQuery(event.target.value)
+                }
+              />
+              <i class="search icon" />
+            </div>
+          </div>
         </div>
         <br />
-        <table border="1" className="table">
-          <thead>
-            <tr>
-              <th>
-                <Link to={`/cities/id`}>ID </Link>
-              </th>
-              <th>
-                <Link to={`/cities/city`}>City </Link>
-              </th>
-              <th>
-                <Link to={`/cities/country`}>Country </Link>
-              </th>
-              <th>
-                <Link to={`/cities/totalbuildings`}>Total Buildings </Link>
-              </th>
+        <div>
+          <table className="ui celled center aligned table">
+            <thead>
+              <tr>
+                <th className="one wide">
+                  <Link to={`/cities/id`}>ID </Link>
+                </th>
+                <th className="two wide">
+                  <Link to={`/cities/city`}>City </Link>
+                </th>
+                <th className="two wide">
+                  <Link to={`/cities/country`}>Country </Link>
+                </th>
+                <th className="two wide">
+                  <Link to={`/cities/totalbuildings`}>Total Buildings </Link>
+                </th>
 
-              <th>
-                <Link to={`/cities/totalstructures`}> Total Structures </Link>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {sortedCities.map(city => {
-              return (
-                <tr key={city.city}>
-                  <td>{city.client_city_id} </td>
-                  <td>
-                    <Link to={`/cities/show/${city.city}`}>{city.city}</Link>
-                  </td>
-                  <td>
-                    <Link to={`/cities/show/chart/${city.country}`}>
-                      {city.country}
-                    </Link>
-                  </td>
-                  <td>{city.all_buildings}</td>
-                  <td>{city.all_structures}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+                <th className="two wide">
+                  <Link to={`/cities/totalstructures`}> Total Structures </Link>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {sortedCities.map(city => {
+                return (
+                  <tr key={city.city}>
+                    <td>{city.client_city_id} </td>
+                    <td>
+                      <Link to={`/cities/show/${city.city}`}>{city.city}</Link>
+                    </td>
+                    <td>
+                      <Link to={`/cities/show/chart/${city.country}`}>
+                        {city.country}
+                      </Link>
+                    </td>
+                    <td>{city.all_buildings}</td>
+                    <td>{city.all_structures}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }

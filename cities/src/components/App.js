@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route } from "react-router-dom";
 import CityIndex from "./CityIndex";
 import Header from "./Header";
 import CityShow from "./CityShow";
@@ -30,7 +30,7 @@ class App extends Component {
   render() {
     return (
       <div className="ui-container">
-        <BrowserRouter history={history}>
+        <Router history={history}>
           <Header />
 
           {/* <SearchBar
@@ -67,7 +67,7 @@ class App extends Component {
               />
             </Switch>
           </div>
-        </BrowserRouter>
+        </Router>
       </div>
     );
   }

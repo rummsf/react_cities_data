@@ -11,6 +11,7 @@ const CountryChart = props => {
     datasets: [
       {
         data: chosenCountryCities.map(city => city.all_structures),
+        label: "total number of structures",
         backgroundColor: "rgba (155, 135, 190)"
       }
     ]
