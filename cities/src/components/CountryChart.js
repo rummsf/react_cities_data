@@ -12,7 +12,10 @@ const CountryChart = props => {
       {
         data: chosenCountryCities.map(city => city.all_structures),
         label: "total number of structures",
-        backgroundColor: "blue"
+        backgroundColor: "blue",
+        hoverBorderWidth: 2,
+        hoverBorderColor: "grey",
+        defaultFontSize: 22
       }
     ]
   };

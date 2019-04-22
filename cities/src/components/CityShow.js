@@ -11,7 +11,7 @@ const CityShow = props => {
         {props.match.params.city}, <br />
         {chosenCity && chosenCity.country}
       </h2>
-      <table border="1" className="table">
+      <table className="ui celled table">
         <thead>
           <tr>
             <th> Total Buildings </th>
