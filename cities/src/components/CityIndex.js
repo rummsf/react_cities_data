@@ -71,20 +71,20 @@ class CityIndex extends React.Component {
           <table className="ui celled center aligned table">
             <thead>
               <tr>
-                <th className="one wide">
+                <th>
                   <Link to={`/cities/id`}>ID </Link>
                 </th>
-                <th className="two wide">
+                <th>
                   <Link to={`/cities/city`}>City </Link>
                 </th>
-                <th className="two wide">
+                <th>
                   <Link to={`/cities/country`}>Country </Link>
                 </th>
-                <th className="two wide">
+                <th>
                   <Link to={`/cities/totalbuildings`}>Total Buildings </Link>
                 </th>
 
-                <th className="two wide">
+                <th>
                   <Link to={`/cities/totalstructures`}> Total Structures </Link>
                 </th>
               </tr>
